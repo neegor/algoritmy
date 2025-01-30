@@ -1,0 +1,63 @@
+site_name: Всякие алгоритмы
+site_url: https://mydomain.org/
+site_description: Сайт про всякие алгоритмы.
+site_author: Igor Gorschal
+repo_url: https://github.com/neegor/algoritmy
+theme:
+  name: material
+  locale: ru
+  logo: assets/logo.svg
+  analytics: {gtag: 'G-274394082'}
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+nav:
+    - Начало: index.md
+    - Графы:
+      - Overview: dev-guide/index.md
+    - Машинное обучение:
+      - Overview: dev-guide/index.md
+    - Аудиовизуальные:
+      - Overview: dev-guide/index.md
+    - Финансовые:
+      - Равноценный ежемесячный взнос (EMI): equated_monthly_installments.md
+    - Сортировки:
+      - Overview: user-guide/index.md
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+
+extra_javascript:
+  - assets/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
+
