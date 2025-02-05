@@ -31,15 +31,14 @@ theme:
 nav:
     - Начало: index.md
     - Графы:
-      - Overview: dev-guide/index.md
+      - Проверка наличия цикла: graphs/check_cycle.md
+      - Двунаправленный поиск: graphs/bidirectional_a_star.md
     - Машинное обучение:
-      - Overview: dev-guide/index.md
-    - Аудиовизуальные:
-      - Overview: dev-guide/index.md
+      - Apriori алгоритм: machine_learning/apriori_algorithm.md
     - Финансовые:
-      - Равноценный ежемесячный взнос (EMI): equated_monthly_installments.md
-    - Сортировки:
-      - Overview: user-guide/index.md
+      - Равноценный ежемесячный взнос (EMI): financial/equated_monthly_installments.md
+    - Аудиовизуальные:
+      - pass: index.md
 
 markdown_extensions:
   - pymdownx.arithmatex:
