@@ -33,12 +33,14 @@ nav:
     - Графы:
       - Проверка наличия цикла: graphs/check_cycle.md
       - Двунаправленный поиск: graphs/bidirectional_a_star.md
+      - Even Tree: graphs/even_tree.md
     - Машинное обучение:
       - Apriori алгоритм: machine_learning/apriori_algorithm.md
+      - Преобразования Данных: machine_learning/data_transformations.md
+      - Поиск A*: machine_learning/astar.md
     - Финансовые:
       - Равноценный ежемесячный взнос (EMI): financial/equated_monthly_installments.md
-    - Аудиовизуальные:
-      - pass: index.md
+      - Диофантово уравнение: financial/diophantine_equation.md
 
 markdown_extensions:
   - pymdownx.arithmatex:
