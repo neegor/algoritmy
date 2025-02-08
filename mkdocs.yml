@@ -7,7 +7,11 @@ theme:
   name: material
   locale: ru
   logo: assets/logo.svg
-  analytics: {gtag: 'G-274394082'}
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
   features:
     - content.code.copy
     - content.code.select
