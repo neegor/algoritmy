@@ -1,5 +1,5 @@
 site_name: Всякие алгоритмы
-site_url: https://mydomain.org/
+site_url: https://neegor.github.io/algoritmy/
 site_description: Сайт про всякие алгоритмы.
 site_author: Igor Gorschal
 repo_url: https://github.com/neegor/algoritmy
@@ -7,10 +7,6 @@ theme:
   name: material
   locale: ru
   logo: assets/logo.svg
-
-  font:
-    text: Roboto
-    code: Roboto Mono
 
   features:
     - content.code.copy
@@ -42,9 +38,11 @@ nav:
       - Apriori алгоритм: machine_learning/apriori_algorithm.md
       - Преобразования Данных: machine_learning/data_transformations.md
       - Поиск A*: machine_learning/astar.md
+      - Автоматическая дифференциация: machine_learning/automatic_differentiation.md
     - Финансовые:
       - Равноценный ежемесячный взнос (EMI): financial/equated_monthly_installments.md
       - Диофантово уравнение: financial/diophantine_equation.md
+      - Дерево Меркла: financial/merkle_tree.md
 
 markdown_extensions:
   - pymdownx.arithmatex:
