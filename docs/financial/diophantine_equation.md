@@ -56,15 +56,15 @@ def diophantine(a: int, b: int, c: int) -> tuple[float, float]:
     # (1)!
     assert (
         c % greatest_common_divisor(a, b) == 0
-    ) # (6)!
-    (d, x, y) = extended_gcd(a, b) # (5)!
+    )
+    (d, x, y) = extended_gcd(a, b)
     r = c / d
     return (r * x, r * y)
 
 
 def diophantine_all_soln(a: int, b: int, c: int, n: int = 2) -> None:
     # (2)!
-    (x0, y0) = diophantine(a, b, c) # (4)!
+    (x0, y0) = diophantine(a, b, c)
     d = greatest_common_divisor(a, b)
     p = a // d
     q = b // d
@@ -104,6 +104,3 @@ def extended_gcd(a: int, b: int) -> tuple[int, int, int]:
     `n` - это нyжное вам решение, по умолчанию `n = 2`
 3.  Расширенный алгоритм Евклида: если `d` является общим делителем чисел `a` и `b` и существует такое 
     целое число `x`, что `d = a * x + b * y`, то `d` представляет собой наибольший общий делитель (НОД) чисел `a` и `b`
-4.  Начальное значение
-5.  функция `extended_gcd(a,b)`, реализованная ниже
-6.  `greatest_common_divisor(a,b)` находится в каталоге `maths``
