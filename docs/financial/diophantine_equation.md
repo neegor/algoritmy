@@ -56,15 +56,15 @@ def diophantine(a: int, b: int, c: int) -> tuple[float, float]:
     # (1)!
     assert (
         c % greatest_common_divisor(a, b) == 0
-    )  # (6)!
-    (d, x, y) = extended_gcd(a, b)  # (5)!
+    ) # (6)!
+    (d, x, y) = extended_gcd(a, b) # (5)!
     r = c / d
     return (r * x, r * y)
 
 
 def diophantine_all_soln(a: int, b: int, c: int, n: int = 2) -> None:
     # (2)!
-    (x0, y0) = diophantine(a, b, c)  # (4)!
+    (x0, y0) = diophantine(a, b, c) # (4)!
     d = greatest_common_divisor(a, b)
     p = a // d
     q = b // d
@@ -93,6 +93,7 @@ def extended_gcd(a: int, b: int) -> tuple[int, int, int]:
 
     return (d, x, y)
 ```
+
 
 1.  Если заданы три целых числа `a`, `b` и `c`, по крайней мере одно из которых не равно нулю, 
     то диофантово уравнение `ax + by = c` будет иметь решение (где `x` и `y` — целые числа) в том случае, если наибольший общий делитель (gcd) чисел `a` и `b` делит число c.
