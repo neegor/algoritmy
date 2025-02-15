@@ -23,7 +23,7 @@ from typing_extensions import Self  # noqa: UP035
 
 
 class OpType(Enum):
-
+    # (1)!
     ADD = 0
     SUB = 1
     MUL = 2
@@ -34,7 +34,7 @@ class OpType(Enum):
 
 
 class Variable:
-
+    # (2)!
     def __init__(self, value: Any) -> None:
         self.value = np.array(value)
         self.param_to: list[Operation] = []
@@ -107,7 +107,7 @@ class Variable:
 
 
 class Operation:
-
+    # (3)!
     def __init__(
         self,
         op_type: OpType,
@@ -127,10 +127,11 @@ class Operation:
 
 
 class GradientTracker:
-
+    # (4)!
     instance = None
 
     def __new__(cls) -> Self:
+        # (5)!
         if cls.instance is None:
             cls.instance = super().__new__(cls)
         return cls.instance
@@ -157,7 +158,7 @@ class GradientTracker:
         output: Variable,
         other_params: dict | None = None,
     ) -> None:
-
+        
         operation = Operation(op_type, other_params=other_params)
         param_nodes = []
         for param in params:
@@ -169,7 +170,7 @@ class GradientTracker:
         operation.add_output(output)
 
     def gradient(self, target: Variable, source: Variable) -> np.ndarray | None:
-
+        # (7)!
         partial_deriv = defaultdict(lambda: 0)
         partial_deriv[target] = np.ones_like(target.to_ndarray())
 
@@ -187,7 +188,7 @@ class GradientTracker:
         return partial_deriv.get(source)
 
     def derivative(self, param: Variable, operation: Operation) -> np.ndarray:
-
+        # (8)!
         params = operation.params
 
         if operation == OpType.ADD:
@@ -219,3 +220,33 @@ class GradientTracker:
         err_msg = f"invalid operation type: {operation.op_type}"
         raise ValueError(err_msg)
 ```
+
+1.  Класс представляет собой список поддерживаемых операций с переменной для вычисления градиента
+
+2.  Class представляет собой `n-мерный объект`, который используется для обертывания массива `numpy`, над которым будут выполняться операции и вычисляться градиент
+
+3.  Класс представляет операцию между одним или двумя объектами-переменными. Объекты операции содержат тип операции, указатели на входную переменную объекты и указатель на результирующую переменную в результате операции.
+
+4.  Класс содержит методы для вычисления частных производных переменной на основе графика вычислений
+
+5.  Выполняется при создании класса object и возвращает результат, если объект уже создан. Этот класс следует одноэлементному шаблону проектирования
+
+6.  Добавляет объект операции к связанным объектам переменных для создания вычислительного графика для вычисления градиентов.
+
+    `op_type`: Тип операции  
+    `params`: Входные параметры операции  
+    `output`: Выходная переменная операции
+
+7.  Обратное накопление частных производных для вычисления градиентов целевой переменной относительно исходной переменной.
+
+    `target`: целевая переменная, для которой вычисляются градиенты.
+    `source`: исходная переменная, относительно которой вычисляются градиенты
+
+    `Returns`: Градиент исходной переменной по отношению к целевой переменной
+
+8.  Вычислить производную от заданной операции/функции
+
+    `param`: переменная, которую нужно дифференцировать
+    `operation`: функция, выполняемая над входной переменной
+    
+    `Returns`: Производная входной переменной по отношению к результату операции
