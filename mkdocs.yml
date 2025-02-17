@@ -1,8 +1,8 @@
-site_name: Всякие алгоритмы
-site_url: https://neegor.github.io/algoritmy/
+site_name: Algobook
+site_url: https://neegor.github.io/algobook/
 site_description: Сайт про всякие алгоритмы.
 site_author: Igor Gorschal
-repo_url: https://github.com/neegor/algoritmy
+repo_url: https://github.com/neegor/algobook
 theme:
   name: material
   locale: ru
