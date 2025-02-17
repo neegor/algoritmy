@@ -44,6 +44,15 @@ nav:
       - Равноценный ежемесячный взнос (EMI): financial/equated_monthly_installments.md
       - Диофантово уравнение: financial/diophantine_equation.md
       - Дерево Меркла: financial/merkle_tree.md
+    - Web программирование:
+      - Парсер поисковой выдачи Google: web_programming/crawl_google_results.md
+      - Скачивание картинок из поиска Google: web_programming/download_images_from_google_query.md
+      - Конвертер валют: web_programming/currency_converter.md
+      - Текущая биржевая цена: web_programming/current_stock_price.md
+      - Текущая погода: web_programming/current_weather.md
+      - Получение информации с Github: web_programming/fetch_github_info.md
+      - Получение геолокации по IP-адресу пользователя: web_programming/get_ip_geolocation.md
+
 
 markdown_extensions:
   - pymdownx.arithmatex:
