@@ -31,10 +31,10 @@ theme:
 
 nav:
     - Начало: index.md
-    - Графы:
-      - Проверка наличия цикла: graphs/check_cycle.md
-      - Двунаправленный поиск: graphs/bidirectional_a_star.md
-      - Even Tree: graphs/even_tree.md
+    - Графы: graphs/index.md
+      #- Проверка наличия цикла: graphs/check_cycle.md
+      #- Двунаправленный поиск: graphs/bidirectional_a_star.md
+      #- Even Tree: graphs/even_tree.md
     - Машинное обучение:
       - Apriori алгоритм: machine_learning/apriori_algorithm.md
       - Преобразования Данных: machine_learning/data_transformations.md
